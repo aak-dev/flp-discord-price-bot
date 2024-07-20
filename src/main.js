@@ -42,7 +42,7 @@ async function getPrice() {
     let latestTimestamp = 0;
     let latestPrice = null;
     for (const item of data) {
-      if (item.symbol === "FLP.3" && item.timestamp > latestTimestamp) {
+      if (item.symbol === "FLP.4" && item.timestamp > latestTimestamp) {
         latestTimestamp = item.timestamp;
         latestPrice = item.price;
       }
