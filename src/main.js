@@ -49,7 +49,7 @@ async function getPrice() {
     }
 
     // Return the price in USD
-    const adjustedPrice = latestPrice ? (parseFloat(latestPrice) * Math.pow(10, -6)).toFixed(3) : null;
+    const adjustedPrice = latestPrice ? (parseFloat(latestPrice) * Math.pow(10, -6)).toFixed(4) : null; // Changed to 4 decimal places
     return adjustedPrice;
   } catch (error) {
     // Log any errors that occur during the API request
@@ -70,8 +70,8 @@ async function updateNicknames() {
     return;
   }
   
-  // Format the price to two decimal places and prepend a dollar sign
-  const newNickname = "$" + parseFloat(price).toFixed(2);
+  // Format the price to four decimal places and prepend a dollar sign
+  const newNickname = "$" + parseFloat(price).toFixed(4); // Changed to 4 decimal places
 
   // Iterate through all the servers the bot is a member of
   client.guilds.cache.each(async (guild) => {
